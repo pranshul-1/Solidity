@@ -9,19 +9,19 @@ contract MyToken {
     mapping(address => uint256) public balances;
     // Constructor to initialize the token details
     constructor(string memory _name, string memory _abbrv, uint256 _initialSupply) {
-        tokenName = _name;
-        tokenAbbrv = _abbrv;
-        totalSupply = _initialSupply;
-        balances[msg.sender] = _initialSupply; // Initial supply to contract deployer
+        tokenName = name;
+        tokenAbbrv = abbrv;
+        totalSupply = initialSupply;
+        balances[msg.sender] = initialSupply; // Initial supply to contract deployer
     }
     // Mint function to create new tokens
-    function mint(address _to, uint256 _value) public {
+    function Mint(address _to, uint256 _value) public {
         totalSupply += _value;
         balances[_to] += _value;
     }
  // Burn function to destroy tokens
-    function burn(address _from, uint256 _value) public {
-        require(balances[_from] >= _value, "Insufficient balance to burn");
+    function Burn(address _from, uint256 _value) public {
+        require(balances[_from] >= _value, "Insufficient balance to Burn");
         totalSupply -= _value;
         balances[_from] -= _value;
     }
